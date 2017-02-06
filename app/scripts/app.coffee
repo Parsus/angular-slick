@@ -35,8 +35,10 @@ angular.module('slick', [])
       pauseOnHover: "@"
       pauseOnDotsHover: "@"
       responsive: "="
+      rows: "@"
       rtl: "@"
       slide: "@"
+      slidesPerRow: "@"
       slidesToShow: "@"
       slidesToScroll: "@"
       speed: "@"
@@ -93,8 +95,10 @@ angular.module('slick', [])
             onSetPosition: if attrs.onSetPosition then scope.onSetPosition else undefined
             pauseOnHover: scope.pauseOnHover isnt "false"
             responsive: scope.responsive or undefined
+            rows: if scope.rows? then parseInt(scope.rows, 10) else 1
             rtl: scope.rtl is "true"
             slide: scope.slide or "div"
+            slidesPerRow: if scope.slidesPerRow? then parseInt(scope.slidesPerRow, 10) else 1
             slidesToShow: if scope.slidesToShow? then parseInt(scope.slidesToShow, 10) else 1
             slidesToScroll: if scope.slidesToScroll? then parseInt(scope.slidesToScroll, 10) else 1
             speed: if scope.speed? then parseInt(scope.speed, 10) else 300
